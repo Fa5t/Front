@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js"></script>
+        <script src="http://code.jquery.com/jquery-1.8.3.js"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <main>
+            <nav>
+                <img id="menuimg1" class="menuicon" src ="images/earth.svg" onclick="pageSelect(0)">
+                <img id="menuimg2" class="menuicon" src ="images/rocket.svg" onclick="pageSelect(1)">
+                <img id="menuimg3" class="menuicon" src ="images/aqualung.svg" onclick="pageSelect(2)">
+                <img id="menuimg4" class="menuicon" src ="images/thermometer.svg" onclick="pageSelect(3)">
+            </nav>
+
+            <div class="astronomy"></div>
+            <div class="bigRocket"></div>
+
+            <div class ="main"> 
+
+                <div class="status">
+                    <div class="status-header">
+                    <span><b>Статус</b></span>
+                    <span><button class="button-start">Поехали!</button></span>
+                    </div>
+                    <hr>
+                    <ul class="status-list">
+                        <li><span>Ракета выбрана</span></li>
+                        <li><span>Команда собрана</span></li>
+                        <li><span>Погода - ок</span></li>
+                    </ul>
+                    <br>
+                </div>
+
+                <div class="weather">
+                    <div class="weather-header">
+                        <span><b>Погодные условия</b></span>
+                    </div>
+                    <hr>
+                    <div class="weather-list">
+                        <span class="leftText"><b>Локация</b></span><span class="rightText">Космодром Северный </span>
+                        <hr>
+                        <span class="leftText"><b>Температура</b></span><span class="rightText">+15</span>
+                        <hr>
+                        <span class="leftText"><b>Влажность</b></span><span class="rightText">63%</span>
+                        <hr>
+                        <span class="leftText"><b>Ветер</b></span><span class="rightText">5 м\с, СЗ</span>
+                    </div>
+                    <br>
+                </div>
+
+                <div class="crew">
+                    <div class="crew-header">
+                        <span><b>Экипаж</b></span>
+                        </div>
+                        <hr>
+                        <div class="crew-list">
+                            <div>
+                            <span class="captain leftText"><b>Капитан</b></span><span class="rightText">Константин Константинопольский</span>
+                            <hr>
+                            </div>
+                            <div>
+                            <span class="engineer leftText"><b>Борт инженер</b></span><span class="rightText">Иван Иванов</span>
+                            <hr>
+                            </div>
+                            <div>
+                            <span class="doctor leftText"><b>Врач</b></span><span class="rightText">Петр Петров</span>
+                            <hr>
+                            </div>
+                            <div>
+                            <span class="spacemarine leftText"><b>Космодесантник</b></span><span class="rightText">Анастасия Преображенская</span>
+                            </div>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+
+            <div class="main main1"><h1>Выбор корабля</h1></div>
+            <div class="main main2"><h1>Сбор команды</h1></div>
+            <div class="main main3"><h1>Проверка погодных условий</h1></div>
+
+        </main>
+    </body>
+</html>
