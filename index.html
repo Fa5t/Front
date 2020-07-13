@@ -10,47 +10,89 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="style.css">
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" rel="stylesheet">
+        <script src="script.js"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     </head>
     <body>
         <main>
             <nav>
-                <img id="menuimg1" class="menuicon" src ="images/earth.svg">
-                <img id="menuimg2" class="menuicon" src ="images/rocket.svg">
-                <img id="menuimg3" class="menuicon" src ="images/aqualung.svg">
-                <img id="menuimg4" class="menuicon" src ="images/thermometer.svg">
+                <img id="menuimg1" class="menuicon" src ="images/earth.svg" onclick="">
+                <img id="menuimg2" class="menuicon" src ="images/rocket.svg" onclick="">
+                <img id="menuimg3" class="menuicon" src ="images/aqualung.svg" onclick="">
+                <img id="menuimg4" class="menuicon" src ="images/thermometer.svg" onclick="">
             </nav>
-            <div id ="main"> 
-                <div class="status">
+
+            <div id ="main">
+
+                <div class="astronomy"></div>
+                <div class="bigRocket"></div>
+                <br><br>
+                <div class="status selected">
                     <div class="status-header">
-                    <span><b>Статус</b></span>
-                    <span><button class="button-start">Поехали!</button></span>
+                    <b>Статус</b>
+                    <button class="button-start">Поехали!</button>
                     </div>
-                    <hr>
                     <ul class="status-list">
-                        <li><span>Ракета выбрана</span></li>
-                        <li><span>Команда собрана</span></li>
-                        <li><span>Погода - ок</span></li>
+                        <li>Ракета выбрана</li>
+                        <li>Команда собрана</li>
+                        <li>Погода - ок</li>
                     </ul>
-                    <br>
                 </div>
-                <div class="weather">
+
+                <div class="weather selected">
                     <div class="weather-header">
-                        <span><b>Погодные условия</b></span>
+                        <b>Погодные условия</b>
                     </div>
-                    <hr>
                     <div class="weather-list">
-                        <span class="leftText"><b>Локация</b></span><span class="rightText">Космодром Северный </span>
-                        <hr>
-                        <span class="leftText"><b>Температура</b></span><span class="rightText">+15</span>
-                        <hr>
-                        <span class="leftText"><b>Влажность</b></span><span class="rightText">63%</span>
-                        <hr>
-                        <span class="leftText"><b>Ветер</b></span><span class="rightText">5 м\с, СЗ</span>
+                        <div class = "leftText">
+                            <ul class = "weather-list-spisok">
+                                <li>Локация</li>
+                                <li>Температура</li>
+                                <li>Влажность</li>
+                                <li>Ветер</li>
+                            </ul>
+                        </div>
+                        <div class = "rightText">
+                            <ul class = "weather-list-spisok">
+                                <li>Космодром Северный</li>
+                                <li>+15</li>
+                                <li>63%</li>
+                                <li>5 м\с, СЗ</li>
+                            </ul>
+                        </div>
                     </div>
-                    <br>
                 </div>
+
+                <div class="crew selected">
+                    <div class="crew-header">
+                        <b>Экипаж</b>
+                    </div>
+                    <div class="crew-list">
+                        <div class = "leftText"> 
+                            <ul class = "crew-list-spisok">
+                                <li>Капитан</li>
+                                <li>Борт инженер</li>
+                                <li>Врач</li>
+                                <li>Космодесантник</li>
+                            </ul>
+                        </div>
+                        <div class  ="rightText"> 
+                            <ul class = "crew-list-spisok">
+                                <li>Константин Константинопольский</li>
+                                <li>Иван Иванов</li>
+                                <li>Петр Петров</li>
+                                <li>Анастасия Преображенская</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
             </div>
+
+            <div class="shipselect unselected"><h1>Выбор корабля</h1></div>
+            <div class="crewselect unselected"><h1>Сбор команды</h1></div>
+            <div class="teamselect unselected"><h1>Проверка погодных условий</h1></div>
+
         </main>
     </body>
 </html>

@@ -1,14 +1,12 @@
 body{
-	font-family: 'Poppins', sans-serif;
+	font-family: 'Roboto', sans-serif;
 	background: url("images/background.png");
 	padding: 95px 95px 95px 95px;
 }
 
 main{
 	position: relative;
-	width:100%;
-	height:100%;
-	min-height: 900px;
+	height: 900px;
 	background: #F4F6F9;
 	position:center;
 	border-radius: 50px;
@@ -26,44 +24,70 @@ nav{
 }
 
 #main{
-	min-height: 900px;
-	max-height: 2000px;
-	padding: 30px;
+	height: 900px;
 	position:right;
 }
-.status{
-	width: 30%;
-	height: 20%;
-	margin-left:8%;
-	border-radius: 10px 10px 10px 10px;
-	background: white;
-	box-shadow: 0 5px 5px -5px black;
-	border-radius: 10px;
-}
-.weather{
-	width: 30%;
+
+.status,
+.weather,
+.crew{
+	width: 40%;
 	height: 25%;
-	margin-top:2%;
-	margin-left:8%;
+	margin-top: 1%;
+	margin-bottom: 3%;
+	margin-left:10%;
 	border-radius: 10px 10px 10px 10px;
 	background: white;
 	box-shadow: 0 5px 5px -5px black;
 	border-radius: 10px;
 }
+
 .menuicon{
 	padding:15%;
 	margin-top:10%;
 	opacity:0.75;
 }
+
 .menuicon:hover{
 	opacity:1;
 }
-.status-header{
-	padding:4%;
+
+.status-header,
+.weather-header,
+.crew-header{
+	padding:4% 4% 2% 4%;
 }
-.weather-header{
-	padding:4%;
+
+.weather-list,
+.crew-list{
+	margin: 0% 7% 7% 7%
 }
+
+
+.weather-list-spisok{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.crew-list-spisok{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.status-header,
+.weather-header,
+.crew-header,
+.leftText li:not(:last-child),
+.rightText li:not(:last-child){
+	border-bottom: 1px solid #D8DCE3;
+}
+
+li{
+	padding: 8px 0 8px 0;
+}
+
 .button-start{
 	float:right;
 	background: white-space;
@@ -71,20 +95,68 @@ nav{
 	border-radius:5px;
 	padding: 5px 25px 5px 25px;
 }
+
+.captain{
+	color:#FF7D84;
+}
+.engineer{
+	color:#E69F54;
+}
+.doctor{
+	color:#64D03F;
+}
+.spacemarine{
+	color:#5A95F2;
+}
+
 .status-list li{
 	list-style-image: url("images/greenStatus.svg");
 }
+
 .status-list li:last-child{
 	list-style-image: url("images/redStatus.svg");
 }
-.weather-list{
-	margin: 0% 7% 7% 7%
-}
+
 .leftText{
+	float: left;
+	width: 40%;
 	color:#0A5499;
+	font-weight: bold;
 }
+
 .rightText{
-	display:grid;
+	width: 60%;
+	float:right;	
+}
+
+.astronomy{
+	width:400px;
+	height:400px;
+	background-image:url(images/astronomy.svg);
+	background-repeat:no-repeat;
+	position:right;
 	float:right;
-	
+}
+.bigRocket{
+	width:350px;
+	height:400px;
+	margin-top:350px;
+	background-image:url(images/bigRocket.svg);
+	background-repeat:no-repeat;
+	position: absolute;
+	bottom: 10px;
+	right: 250px;
+}
+.unselected{
+	display: none;
+	margin-left:70px;
+	padding-left:80px;
+	padding-top:15px;
+}
+.shipselect {
+	font-size: 0;
+}
+
+.selected {
+	display: block;
 }
