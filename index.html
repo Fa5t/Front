@@ -10,87 +10,115 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="style.css">
-        <script src="script.js"></script>
-        <script src="http://code.jquery.com/jquery-1.8.3.js"></script>
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     </head>
     <body>
         <main>
             <nav>
-                <img id="menuimg1" class="menuicon" src ="images/earth.svg" onclick="pageSelect(0)">
-                <img id="menuimg2" class="menuicon" src ="images/rocket.svg" onclick="pageSelect(1)">
-                <img id="menuimg3" class="menuicon" src ="images/aqualung.svg" onclick="pageSelect(2)">
-                <img id="menuimg4" class="menuicon" src ="images/thermometer.svg" onclick="pageSelect(3)">
+                    <img class="menuicon clicked" id = "icon-main" src ="images/earth.svg">
+                    <img class="menuicon" id = "icon-rocket" src ="images/rocket.svg">
+                    <img class="menuicon" id = "icon-team" src ="images/aqualung.svg">
+                    <img class="menuicon" id = "icon-temperature" src ="images/thermometer.svg">
             </nav>
 
-            <div class="astronomy"></div>
-            <div class="bigRocket"></div>
+            <div class ="main">
 
-            <div class ="main"> 
-
-                <div class="status">
+                <div class="astronomy"></div>
+                <div class="bigRocket"></div>
+                <br><br>
+                <div class="status selected">
                     <div class="status-header">
-                    <span><b>Статус</b></span>
-                    <span><button class="button-start">Поехали!</button></span>
+                    <b>Статус</b>
+                    <button class="button-start">Поехали!</button>
                     </div>
-                    <hr>
                     <ul class="status-list">
-                        <li><span>Ракета выбрана</span></li>
-                        <li><span>Команда собрана</span></li>
-                        <li><span>Погода - ок</span></li>
+                        <li>Ракета выбрана</li>
+                        <li>Команда собрана</li>
+                        <li>Погода - ок</li>
                     </ul>
-                    <br>
                 </div>
 
-                <div class="weather">
+                <div class="weather select">
                     <div class="weather-header">
-                        <span><b>Погодные условия</b></span>
+                        <b>Погодные условия</b>
                     </div>
-                    <hr>
                     <div class="weather-list">
-                        <span class="leftText"><b>Локация</b></span><span class="rightText">Космодром Северный </span>
-                        <hr>
-                        <span class="leftText"><b>Температура</b></span><span class="rightText">+15</span>
-                        <hr>
-                        <span class="leftText"><b>Влажность</b></span><span class="rightText">63%</span>
-                        <hr>
-                        <span class="leftText"><b>Ветер</b></span><span class="rightText">5 м\с, СЗ</span>
+                        <div class = "leftText">
+                            <ul class = "weather-list-spisok">
+                                <li>Локация</li>
+                                <li>Температура</li>
+                                <li>Влажность</li>
+                                <li>Ветер</li>
+                            </ul>
+                        </div>
+                        <div class = "rightText">
+                            <ul class = "weather-list-spisok">
+                                <li>Космодром Северный</li>
+                                <li>+15</li>
+                                <li>63%</li>
+                                <li>5 м\с, СЗ</li>
+                            </ul>
+                        </div>
                     </div>
-                    <br>
                 </div>
 
-                <div class="crew">
+                <div class="crew selected">
                     <div class="crew-header">
-                        <span><b>Экипаж</b></span>
+                        <b>Экипаж</b>
+                    </div>
+                    <div class="crew-list">
+                        <div class = "leftText"> 
+                            <ul class = "crew-list-spisok">
+                                <li>Капитан</li>
+                                <li>Борт инженер</li>
+                                <li>Врач</li>
+                                <li>Космодесантник</li>
+                            </ul>
                         </div>
-                        <hr>
-                        <div class="crew-list">
-                            <div>
-                            <span class="captain leftText"><b>Капитан</b></span><span class="rightText">Константин Константинопольский</span>
-                            <hr>
-                            </div>
-                            <div>
-                            <span class="engineer leftText"><b>Борт инженер</b></span><span class="rightText">Иван Иванов</span>
-                            <hr>
-                            </div>
-                            <div>
-                            <span class="doctor leftText"><b>Врач</b></span><span class="rightText">Петр Петров</span>
-                            <hr>
-                            </div>
-                            <div>
-                            <span class="spacemarine leftText"><b>Космодесантник</b></span><span class="rightText">Анастасия Преображенская</span>
-                            </div>
-                            <br>
+                        <div class  ="rightText"> 
+                            <ul class = "crew-list-spisok">
+                                <li>Константин Константинопольский</li>
+                                <li>Иван Иванов</li>
+                                <li>Петр Петров</li>
+                                <li>Анастасия Преображенская</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
                 
             </div>
 
-            <div class="main main1"><h1>Выбор корабля</h1></div>
-            <div class="main main2"><h1>Сбор команды</h1></div>
-            <div class="main main3"><h1>Проверка погодных условий</h1></div>
+            <div class="main hidden">
+                <h1 class="main-text">Выбор корабля</h1>
+                <div class="ship selected">
+                    <div class="ship-header">
+                        <b>Ракета</b>
+                        <button class="button-ship">Собрать ракету</button>
+                    </div>
+                    <div class="ship-list">
+                        <img class="shipimg ship1" src ="images/aqualung.svg" onclick="">
+                        <div class = "leftText not-border">
+                            <ul class = "ship-list-spisok">
+                                <li>Имя</li>
+                                <li>Скорость</li>
+                                <li>Экипаж</li>
+                            </ul>
+                        </div>
+                        <div class = "rightText not-border">
+                            <ul class = "ship-list-spisok">
+                                <li>Сокол 345</li>
+                                <li>8 км/с</li>
+                                <li>2</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main hidden"><h1 class="main-text">Сбор команды</h1></div>
+            <div class="main hidden"><h1 class="main-text">Проверка погодных условий</h1></div>
 
+            <script src="http://code.jquery.com/jquery-3.5.1.js"></script>
+            <script src="script.js"></script>
         </main>
     </body>
 </html>

@@ -1,14 +1,12 @@
 body{
-	font-family: 'Poppins', sans-serif;
+	font-family: 'Roboto', sans-serif;
 	background: url("images/background.png");
 	padding: 95px 95px 95px 95px;
 }
 
 main{
 	position: relative;
-	width:100%;
-	height:100%;
-	min-height: 900px;
+	height: 900px;
 	background: #F4F6F9;
 	position:center;
 	border-radius: 50px;
@@ -26,16 +24,29 @@ nav{
 }
 
 .main{
-	min-height: 900px;
-	max-height: 2000px;
-	padding: 30px;
+	height: 900px;
 	position:right;
 }
 
-.status{
+.status,
+.weather,
+.crew{
+	width: 40%;
+	height: 25%;
+	margin-top: 1%;
+	margin-bottom: 3%;
+	margin-left:10%;
+	border-radius: 10px 10px 10px 10px;
+	background: white;
+	box-shadow: 0 5px 5px -5px black;
+	border-radius: 10px;
+}
+
+.ship{
 	width: 30%;
 	height: 20%;
 	margin-top: 1%;
+	margin-bottom: 3%;
 	margin-left:10%;
 	border-radius: 10px 10px 10px 10px;
 	background: white;
@@ -43,27 +54,6 @@ nav{
 	border-radius: 10px;
 }
 
-.weather{
-	width: 30%;
-	height: 25%;
-	margin-top:3%;
-	margin-left:10%;
-	border-radius: 10px 10px 10px 10px;
-	background: white;
-	box-shadow: 0 5px 5px -5px black;
-	border-radius: 10px;
-}
-
-.crew{
-	width: 30%;
-	height: 25%;
-	margin-top:3%;
-	margin-left:10%;
-	border-radius: 10px 10px 10px 10px;
-	background: white;
-	box-shadow: 0 5px 5px -5px black;
-	border-radius: 10px;
-}
 
 .menuicon{
 	padding:15%;
@@ -75,28 +65,58 @@ nav{
 	opacity:1;
 }
 
-.icon-clicked {
+.clicked{
 	opacity: 1;
 }
 
-.status-header{
-	padding:4%;
+.status-header,
+.weather-header,
+.crew-header,
+.ship-header{
+	padding:4% 4% 2% 4%;
 }
 
-.weather-header{
-	padding:4%;
-}
-
-.crew-header{
-	padding:4%;
-}
-
-.weather-list{
+.weather-list,
+.crew-list,
+.ship-list{
 	margin: 0% 7% 7% 7%
 }
 
-.crew-list{
-	margin: 0% 7% 7% 7%
+
+.weather-list-spisok,
+.ship-list-spisok{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.crew-list-spisok{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.status-header,
+.weather-header,
+.crew-header,
+.ship-header,
+.leftText li:not(:last-child),
+.rightText li:not(:last-child){
+	border-bottom: 1px solid #D8DCE3;
+}
+
+.not-border li:not(:last-child),
+.not-border li:not(:last-child){
+	border-bottom: none;
+}
+
+.main-text{
+	padding-left: 10%;
+	padding-top: 1%;
+}
+
+li{
+	padding: 8px 0 8px 0;
 }
 
 .button-start{
@@ -129,13 +149,21 @@ nav{
 }
 
 .leftText{
+	float: left;
+	width: 22%;
 	color:#0A5499;
+	font-weight: bold;
+}
+
+.shipimg{
+	float: left;
+	padding-right: 5%;
+	padding-top: 5%;
 }
 
 .rightText{
-	display:grid;
-	float:right;
-	
+	width: 44%;
+	float:right;	
 }
 
 .astronomy{
@@ -156,23 +184,6 @@ nav{
 	bottom: 10px;
 	right: 250px;
 }
-.main1 {
+.hidden{
 	display: none;
-	margin-left:70px;
-	padding-left:80px;
-	padding-top:15px;
-}
-
-.main2 {
-	display: none;
-	margin-left:70px;
-	padding-left:80px;
-	padding-top:15px;
-}
-
-#main3 {
-	display: none;
-	margin-left:70px;
-	padding-left:80px;
-	padding-top:15px;
 }
