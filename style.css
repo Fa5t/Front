@@ -1,0 +1,433 @@
+body{
+	font-family: 'Roboto', sans-serif;
+	background: url("images/background.png");
+	padding: 95px 95px 95px 95px;
+}
+
+main{
+	position: relative;
+	height: 900px;
+	background: #F4F6F9;
+	position:center;
+	border-radius: 50px;
+	box-shadow: 5px 7px 40px rgba(0, 0, 0, 0.2);
+}
+
+nav{
+	position: absolute;
+	width:8%;
+	height:100%;
+	background: #FF5800;
+	position:left;
+	float:left;
+	border-radius: 50px 0px 0px 50px;
+}
+
+.crewdetails{
+	margin-top: 15%;
+}
+
+.main{
+	height: 900px;
+	position:right;
+}
+
+.status,
+.weather,
+.crew{
+	width: 40%;
+	height: 25%;
+	margin-top: 1%;
+	margin-bottom: 3%;
+	margin-left:10%;
+	border-radius: 10px 10px 10px 10px;
+	background: white;
+	box-shadow: 0 5px 5px -5px black;
+	border-radius: 10px;
+}
+
+.main-block{
+	display:inline-block;
+	width: 80%;
+	height: 30%;
+	margin-top: 1%;
+	margin-bottom: 3%;
+	margin-left:10%;
+	border-radius: 10px 10px 10px 10px;
+	background: white;
+	box-shadow: 0 5px 5px -5px black;
+	border-radius: 10px;
+}
+
+.main-block-choose{
+	width: 80%;
+	height: 20%;
+	margin-top: 10%;
+	margin-bottom: 3%;
+	margin-left:10%;
+	border-radius: 10px 10px 10px 10px;
+	background: white;
+	box-shadow: 0 5px 5px -5px black;
+	border-radius: 10px;
+}
+
+.ship{
+		margin-left: 10%;
+		overflow:hidden;
+		box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+		border-radius:10px 10px 10px 10px;
+		background: white;
+		margin-top: 1%;
+}
+
+.ship-hidden{
+	width: 30%;
+	margin-left: 10%;
+	overflow:hidden;
+	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+	border-radius:10px 10px 10px 10px;
+	background: white;
+	margin-top: 2%;
+}
+
+.menuicon{
+	padding:15%;
+	margin-top:10%;
+	opacity:0.75;
+}
+
+.menuicon:hover{
+	opacity:1;
+}
+
+.clicked{
+	opacity: 1;
+}
+
+.status-header,
+.weather-header,
+.crew-header,
+.ship-header,
+.main-block-header{
+	padding:4% 4% 2% 4%;
+}
+
+.weather-list,
+.crew-list,
+.ship-list,
+.main-block-list,
+.main-block-list-flex{
+	margin: 0% 7% 7% 7%
+}
+
+.main-block-list-flex{
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+}
+
+.weather-list-spisok,
+.ship-list-spisok,
+.main-block-list-spisok{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.crew-list-spisok{
+	list-style: none;
+	margin-top: 10%;
+	padding: 0;
+}
+
+.crew-list-spisok-selectable{
+	list-style: none;
+	margin-top: 5%;
+}
+
+.status-header,
+.weather-header,
+.crew-header,
+.ship-header,
+.main-block-header,
+.leftText li:not(:last-child),
+.rightText li:not(:last-child){
+	border-bottom: 1px solid #D8DCE3;
+}
+
+.not-border li:not(:last-child){
+	border-bottom: none;
+}
+
+.main-text{
+	padding-left: 10%;
+	padding-top: 1%;
+}
+
+li{
+	padding: 8px 0 8px 0;
+}
+
+.button-start{
+	float:right;
+	background: white-space;
+	border:none;
+	border-radius:5px;
+	padding: 5px 25px 5px 25px;
+}
+
+.button-ship{
+	float: right;
+	background-color: #73E24D;
+	border:none;
+	padding: 5px 20px 5px 20px;
+	border-radius: 5px;
+}
+
+.radio {
+	position: absolute;
+	z-index: -1;
+	opacity: 0;
+}
+.radio + label {
+	position: relative;
+	padding: 0 0 0 35px;
+	cursor: pointer;
+}
+.radio + label:before {
+	content: '';
+	position: absolute;
+	top: -3px;
+	left: 0;
+	width: 22px;
+	height: 22px;
+	border: 2px solid white;
+	border-radius: 50%;
+	background: #FFF;
+}
+.radio + label:after {
+	content: '';
+	position: absolute;
+	top: 1px;
+	left: 4px;
+	width: 16px;
+	height: 16px;
+	border-radius: 50%;
+	opacity: 0;
+}
+.radio:checked + label:after {
+	opacity: 1;
+}
+.radio:focus + label:before {
+	background: #73E24D;
+}
+.radio-space{
+	display:inline-grid;
+	width:100%;
+	padding-top: 8px;
+	padding-left: 35%;
+	margin-top: 8px;
+    height: 30px;
+	background-color: #D1E1FA;
+	border-radius: 0px 0px 10px 10px;
+	border-top: 1px solid black;
+	float: initial;
+}
+.radio-space input::after{
+	background-color: lawngreen;
+}
+
+.captain{
+	color:#FF7D84;
+}
+.engineer{
+	color:#E69F54;
+}
+.doctor{
+	color:#64D03F;
+}
+.spacemarine{
+	color:#5A95F2;
+}
+
+.marine{
+	color:#5A95F2;
+}
+
+.status-list li{
+	list-style-image: url("images/greenStatus.svg");
+}
+
+.status-list li:last-child{
+	list-style-image: url("images/redStatus.svg");
+}
+
+.leftText{
+	float: left;
+	width: 40%;
+	color:#0A5499;
+	font-weight: bold;
+}
+
+.shipimg{
+	width: 20%;
+	height: 20%;
+	float: left;
+	padding-right: 8%;
+	padding-top: 5%;
+}
+
+.rightText{
+	width: 60%;
+	float:right;	
+}
+
+.leftText-ship{
+	float: left;
+	width: 22%;
+	color:#0A5499;
+	font-weight: bold;
+}
+
+.rightText-ship{
+	float:right;
+	width:44%;
+}
+
+.leftText-crew{
+	float: left;
+	width: 60%
+}
+
+.rightText-crew{
+	float:right;
+	width:20%;
+}
+.leftpart{
+	position: absolute;
+	left: 7%;
+	top: 8%;
+	width:46.5%;
+	height: 90%;
+}
+
+.rightpart{
+	position: absolute;
+	right: 0;
+	top: 8%;
+	width:46.5%;
+	height: 90%;
+}
+
+.margin{
+	width:100%;
+	margin-top:5%;
+}
+
+
+.teamimage{
+    width: 20px;
+    height: 20px;
+    background-repeat:no-repeat;
+    background-size:contain;
+    display:inline-block;
+    float:left;
+    margin-left:5px;
+    margin-right:10px;
+}
+
+.crewimage{
+    width: 30px;
+    height: 30px;
+    background-repeat:no-repeat;
+    background-size:contain;
+    display:inline-block;
+    float:left;
+	margin-right:10px;
+}
+
+.crew-list-spisok li:not(:first-child) .teamimage{
+	margin-top: 15%;
+}
+
+.inactiveButton{
+	float:right;
+	background: white-space;
+	border:none;
+	border-radius:5px;
+	padding: 5px 25px 5px 25px;
+}
+
+.activeButton{
+	width: 30%;
+	float:right;
+	background-color: #73E24D;
+	border-radius: 10px;
+	border: none;
+	height: 25px;
+        color:#FFF;
+}
+
+.astronomy{
+	width:400px;
+	height:400px;
+	background-image:url(images/astronomy.svg);
+	background-repeat:no-repeat;
+	position:right;
+	float:right;
+}
+.bigRocket{
+	width:350px;
+	height:400px;
+	margin-top:350px;
+	background-image:url(images/bigRocket.svg);
+	background-repeat:no-repeat;
+	position: absolute;
+	bottom: 10px;
+	right: 250px;
+}
+.hidden{
+	display: none;
+}
+
+.left-text{
+	float:left;
+	width:60%;
+}
+
+.right-text{
+	float:right;
+	width:40%;
+}
+
+.captain1{
+    background-image:url(images/captain1.svg);
+}
+
+.captain2{
+    background-image:url(images/captain2.svg);
+}
+
+.doctor1{
+    background-image:url(images/doctor1.svg);
+}
+
+.doctor2{
+    background-image:url(images/doctor2.svg);
+}
+
+.engineer1{
+    background-image:url(images/engineer1.svg);
+}
+
+.engineer2{
+    background-image:url(images/engineer2.svg);
+}
+
+.marine1{
+    background-image:url(images/marine1.svg);
+}
+
+.marine2{
+    background-image:url(images/marine2.svg);
+} 

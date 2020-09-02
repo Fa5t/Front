@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <main>
+            <nav>
+                    <img class="menuicon clicked" id = "icon-main" src ="images/earth.svg">
+                    <img class="menuicon" id = "icon-rocket" src ="images/rocket.svg">
+                    <img class="menuicon" id = "icon-team" src ="images/aqualung.svg">
+                    <img class="menuicon" id = "icon-temperature" src ="images/thermometer.svg">
+            </nav>
+
+            <div class ="main">
+
+                <div class="astronomy"></div>
+                <div id = "mainRocket" class="bigRocket ship1"></div>
+                <br><br>
+                <div class="status selected">
+                    <div class="status-header">
+                    <b>Статус</b>
+                    <button class="inactiveButton">Поехали!</button>
+                    </div>
+                    <ul class="status-list">
+                        <li>Ракета выбрана</li>
+                        <li>Команда собрана</li>
+                        <li>Погода - ок</li>
+                    </ul>
+                </div>
+
+                <div class="weather select">
+                    <div class="weather-header">
+                        <b>Погодные условия</b>
+                    </div>
+                    <div class="weather-list">
+                        <div class = "leftText">
+                            <ul class = "weather-list-spisok">
+                                <li>Локация</li>
+                                <li>Температура</li>
+                                <li>Влажность</li>
+                                <li>Ветер</li>
+                            </ul>
+                        </div>
+                        <div class = "rightText">
+                            <ul class = "weather-list-spisok">
+                                <li>Космодром Северный</li>
+                                <li>+15</li>
+                                <li>63%</li>
+                                <li>5 м\с, СЗ</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="crew selected">
+                    <div class="crew-header">
+                        <b>Экипаж</b>
+                    </div>
+                    <div class="crew-list">
+                        <div class = "leftText"> 
+                            <ul class = "crew-list-spisok">
+                                <li class="captain">Капитан</li>
+                                <li class = "engineer">Борт инженер</li>
+                                <li class = "doctor">Врач</li>
+                                <li class = "spacemarine">Космодесантник</li>
+                            </ul>
+                        </div>
+                        <div class  ="rightText"> 
+                            <ul class = "crew-list-spisok">
+                                <li>Константин Константинопольский</li>
+                                <li>Иван Иванов</li>
+                                <li>Петр Петров</li>
+                                <li>Анастасия Преображенская</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+
+            <div class="main hidden">
+                <h1 class="main-text">Выбор корабля</h1>
+                <div class="ship selected" style="width:40%">
+                    <div class="ship-header">
+                        <b>Ракета</b>
+                        <button class="activeButton button-ship">Собрать ракету</button>
+                    </div>
+                    <div class="ship-list">
+                        <img class="shipimg ship1" src ="images/ship3.svg" id="rocket-icon">
+                        <div class = "leftText-ship not-border">
+                            <ul class = "ship-list-spisok">
+                                <li>Имя</li>
+                                <li>Скорость</li>
+                                <li>Экипаж</li>
+                            </ul>
+                        </div>
+                        <div class = "rightText-ship not-border">
+                            <ul class = "ship-list-spisok">
+                                <li><span id="rocket-name">Сокол 345</span></li>
+                                <li><span id="rocket-speed">8 км/с</span></li>
+                                <li><span id="rocket-capacity">2</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ship-hidden">
+                    <div class="ship-list">
+                        <img class="shipimg ship2" src ="images/ship1.svg">
+                        <div class = "leftText-ship not-border">
+                            <ul class = "ship-list-spisok">
+                                <li>Имя</li>
+                                <li>Скорость</li>
+                                <li>Экипаж</li>
+                            </ul>
+                        </div>
+                        <div class = "rightText-ship not-border">
+                            <ul class = "ship-list-spisok">
+                                <li><span id = "name1">Урског-123</span></li>
+                                <li><span id = "speed1">6 км\c</span></li>
+                                <li><span id = "capacity1">4</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="radio-space">
+                        <input type="radio" class="radio" id="radio1" value="1" /><label for="radio1">Выбрать</label>
+                    </div>
+                </div>
+
+                <div class="ship-hidden">
+                    <div class="ship-list">
+                        <img class="shipimg ship3" src ="images/ship2.svg">
+                        <div class = "leftText-ship not-border">
+                            <ul class = "ship-list-spisok">
+                                <li>Имя</li>
+                                <li>Скорость</li>
+                                <li>Экипаж</li>
+                            </ul>
+                        </div>
+                        <div class = "rightText-ship not-border">
+                            <ul class = "ship-list-spisok">
+                                <li><span id = "name2">Урског-124</span></li>
+                                <li><span id = "speed2">7 км/с</span></li>
+                                <li><span id = "capacity2">3</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="radio-space">
+                        <input type="radio" class="radio" id="radio2" value="2" /><label for="radio2">Выбрать</label>
+                    </div>
+                </div>
+
+                <div class="ship-hidden">
+                    <div class="ship-list">
+                        <img class="shipimg ship1" src ="images/ship3.svg">
+                        <div class = "leftText-ship not-border">
+                            <ul class = "ship-list-spisok">
+                                <li>Имя</li>
+                                <li>Скорость</li>
+                                <li>Экипаж</li>
+                            </ul>
+                        </div>
+                        <div class = "rightText-ship not-border">
+                            <ul class = "ship-list-spisok">
+                                <li><span id = "name3">Сокол 345</span></li>
+                                <li><span id = "speed3">8 км/с</span></li>
+                                <li><span id = "capacity3">2</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="radio-space">
+                        <input type="radio" class="radio" checked id="radio3" value="3" /><label for="radio3">Выбрать</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="main hidden">
+                
+                <h1 class="main-text">Сбор команды</h1>
+
+                <div class="leftpart">   
+                    <div class="main-block">
+                        <div class="main-block-header">
+                            <b>Экипаж</b>
+                            <button id="crewButton" class="inactiveButton" onclick="CrewUnification()">Готово</button>
+                        </div>
+                        <div class="main-block-list-flex">
+                            <div class="margin"><span class="leftText-crew captain">Капитан</span><span class="rightText-crew"><div class="teamimage captain1" id="captain1"></div> <div id="captain2" class="teamimage captain2"></div> </span></div>
+							<div class="margin"><span class="leftText-crew engineer">Борт инженер</span><span class="rightText-crew"><div id="engineer1" class="teamimage engineer1"></div> <div id="engineer2" class="teamimage engineer2"></div></span></div>
+							<div class="margin"><span class="leftText-crew doctor">Врач</span><span class="rightText-crew"><div id="doctor1" class="teamimage doctor1"></div> <div id="doctor2" class="teamimage doctor2"></div></span></div>
+							<div class="margin"><span class="leftText-crew marine">Космодесантник</span><span class="rightText-crew"><div id="marine1" class="teamimage marine1"></div> <div id="marine2" class="teamimage marine2"></div></span></div>
+                        </div>
+                    </div>
+
+                    <div class="main-block-choose">
+                        <div class="main-block-header">
+                            <b class="captain">Капитан</b>
+                        </div>
+                        <div class="main-block-list">
+                            <div class = "leftText-crew not-border">
+                                <ul class = "crew-list-spisok-selectable">
+                                    <li> <div class="crewimage captain1"></div> Генри Кавилл</li>
+                                    <li> <div class="crewimage captain2"></div> Аня Чалотра</li>
+                                </ul>
+                            </div>
+                            <div class = "rightText-crew not-border">
+                                <ul class = "crew-list-spisok-selectable">
+                                    <li><input type="checkbox" class="crewdetails" id="Генри Кавилл" value="1" name="captain"></li>
+                                    <li><input type="checkbox" class="crewdetails" id="Аня Чалотра" value="2" name="captain"></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="main-block-choose">
+                        <div class="main-block-header">
+                            <b class="doctor">Врач</b>
+                        </div>
+                        <div class="main-block-list">
+                            <div class = "leftText-crew not-border">
+                                <ul class = "crew-list-spisok-selectable">
+                                    <li> <div class="crewimage doctor1"></div> Фрейа Аллан</li>
+                                    <li> <div class="crewimage doctor2"></div> Джои Бэти</li>
+                                </ul>
+                            </div>
+                            <div class = "rightText-crew not-border">
+                                <ul class = "crew-list-spisok-selectable">
+                                    <li><input type="checkbox" class="crewdetails" id="Фрейа Аллан" value="1" name="doctor"></li>
+                                    <li><input type="checkbox" class="crewdetails" id="Джои Бэти" value="2" name="doctor"></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="rightpart">
+
+                    <div class="ship main-block">
+                        <div class="main-block-header">
+                            <b>Экипаж</b>
+                        </div>
+                        <div class="main-block-list">
+                            <img id="rocket-icon" class="shipimg ship1" src ="images/ship3.svg" onclick="">
+                            <div class = "leftText-ship not-border">
+                                <ul class = "ship-list-spisok">
+                                    <li>Имя</li>
+                                    <li>Скорость</li>
+                                    <li>Экипаж</li>
+                                </ul>
+                            </div>
+                            <div class = "rightText-ship not-border">
+                                <ul class = "ship-list-spisok">
+                                    <li id="rocket-name">Сокол 345</li>
+                                    <li id="rocket-speed">8 км/с</li>
+                                    <li id="rocket-capacity">2</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="main-block-choose">
+                        <div class="main-block-header">
+                            <b class="engineer">Борт-инженер</b>
+                        </div>
+                        <div class="main-block-list">
+                            <div class = "leftText-crew not-border">
+                                <ul class = "crew-list-spisok-selectable">
+                                    <li> <div class="crewimage engineer1"></div> МайАнна Беринг</li>
+                                    <li> <div class="crewimage engineer2"></div> Анна Шаффер</li>
+                                </ul>
+                            </div>
+                            <div class = "rightText-crew not-border">
+                                <ul class = "crew-list-spisok-selectable">
+                                    <li><input type="checkbox" class="crewdetails" id="МайАнна Беринг" value="1" name="engineer"></li>
+                                    <li><input type="checkbox" class="crewdetails" id="Анна Шаффер" value="2" name="engineer"></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="main-block-choose">
+                        <div class="main-block-header">
+                            <b class="spacemarine">Космодесантник</b>
+                        </div>
+                        <div class="main-block-list">
+                            <div class = "leftText-crew not-border">
+                                <ul class = "crew-list-spisok-selectable">
+                                    <li> <div class="crewimage marine1"></div> Джоди Мэй</li>
+                                    <li> <div class="crewimage marine2"></div> Имон Фаррен</li>
+                                </ul>
+                            </div>
+                            <div class = "rightText-crew not-border">
+                                <ul class = "crew-list-spisok-selectable">
+                                    <li><input type="checkbox" class="crewdetails" id="Джоди Мэй" value="1" name="marine"></li>
+                                    <li><input type="checkbox" class="crewdetails" id="Имон Фаррен" value="2" name="marine"></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <div class="main hidden"><h1 class="main-text">Проверка погодных условий</h1></div>
+
+            <script src="http://code.jquery.com/jquery-3.5.1.js"></script>
+            <script src="script.js"></script>
+        </main>
+    </body>
+</html>
