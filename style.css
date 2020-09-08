@@ -23,9 +23,7 @@ nav{
 	border-radius: 50px 0px 0px 50px;
 }
 
-.crewdetails{
-	margin-top: 15%;
-}
+
 
 .main{
 	height: 900px;
@@ -81,13 +79,14 @@ nav{
 }
 
 .ship-hidden{
-	width: 30%;
-	margin-left: 10%;
+	width: 450px;
+	margin-left: 2%;
 	overflow:hidden;
 	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
 	border-radius:10px 10px 10px 10px;
 	background: white;
 	margin-top: 2%;
+	border: 1px solid black;
 }
 
 .menuicon{
@@ -126,7 +125,6 @@ nav{
 	flex-wrap: wrap;
 }
 
-.weather-list-spisok,
 .ship-list-spisok,
 .main-block-list-spisok{
 	list-style: none;
@@ -134,30 +132,33 @@ nav{
 	padding: 0;
 }
 
+.weather-list-spisok,
 .crew-list-spisok{
 	list-style: none;
-	margin-top: 10%;
+	margin: 0;
 	padding: 0;
 }
 
 .crew-list-spisok-selectable{
 	list-style: none;
-	margin-top: 5%;
+	width: 100%;
+	margin:0;
+	padding:0;	
 }
 
 .status-header,
 .weather-header,
 .crew-header,
 .ship-header,
-.main-block-header,
-.leftText li:not(:last-child),
-.rightText li:not(:last-child){
+.main-block-header
+{
 	border-bottom: 1px solid #D8DCE3;
 }
 
 .not-border li:not(:last-child){
 	border-bottom: none;
 }
+
 
 .main-text{
 	padding-left: 10%;
@@ -262,7 +263,20 @@ li{
 	list-style-image: url("images/redStatus.svg");
 }
 
+.leftText-l{
+	float: left;
+	width: 40%;
+	color:#0A5499;
+	font-weight: bold;
+}
+
 .leftText{
+	float: left;
+	width: 40%;
+	font-weight: bold;
+}
+
+.leftText-border{
 	float: left;
 	width: 40%;
 	color:#0A5499;
@@ -275,9 +289,15 @@ li{
 	float: left;
 	padding-right: 8%;
 	padding-top: 5%;
+	padding-bottom: 2%;
 }
 
 .rightText{
+	width: 60%;
+	float:right;	
+}
+
+.rightText-border{
 	width: 60%;
 	float:right;	
 }
@@ -297,6 +317,11 @@ li{
 .leftText-crew{
 	float: left;
 	width: 60%
+}
+
+.leftText-c{
+	margin: 0;
+	padding: 0;
 }
 
 .rightText-crew{
@@ -321,9 +346,42 @@ li{
 
 .margin{
 	width:100%;
-	margin-top:5%;
+	margin-top:4%;
 }
 
+.weather-list-spisok li,
+.crew-list-spisok li{
+	padding-top: 4%;
+}
+
+.margin-w{
+	width:100%;
+	border-bottom: 1px solid #D8DCE3;
+}
+
+.margin-s{
+	margin-top:3%;
+}
+
+.margin-c{
+	margin: 0;
+	padding: 0;
+}
+
+.margin-cr{
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	padding-bottom: 5%;
+	border-bottom:1px solid #D8DCE3;
+	
+}
+
+.all-ship-hidden{
+	display: flex;
+	flex-wrap: wrap;
+	margin-left: 10%;
+}
 
 .teamimage{
     width: 20px;
@@ -342,8 +400,10 @@ li{
     background-repeat:no-repeat;
     background-size:contain;
     display:inline-block;
-    float:left;
-	margin-right:10px;
+	float:left;
+	margin: 0;
+	padding: 0;
+	padding-left: 5%;
 }
 
 .crew-list-spisok li:not(:first-child) .teamimage{
@@ -390,6 +450,10 @@ li{
 	display: none;
 }
 
+input[type=checkbox] {
+   zoom: 1.7;
+}
+
 .left-text{
 	float:left;
 	width:60%;
@@ -398,6 +462,13 @@ li{
 .right-text{
 	float:right;
 	width:40%;
+}
+
+.crewdetails{
+	margin: 0;
+	margin-left: 100%;
+	margin-top: 2%;
+	padding: 0;
 }
 
 .captain1{

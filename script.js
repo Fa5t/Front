@@ -5,7 +5,7 @@ let crew = document.querySelectorAll(".teamimage");
 let check = document.querySelectorAll(".crewdetails");
 document.querySelector("#crewButton").disabled=true;
 let shipCapacity = 2;
-let crewAmount=0;
+let crewQuantity=0;
 radioButton[0].checked=true;
 let selectedTeam = new Map();
 
@@ -41,10 +41,10 @@ function CrewUnification(){
     check.forEach(
         function(e){
             if (e.checked) {
-                let tempname=e.id;
-                let temprole=e.name;
-                let tempid=e.value;
-                selectedTeam.set(i,new TeamMember(tempname,tempid,temprole));
+                let selectname = e.id;
+                let selectrole = e.name;
+                let selectid = e.value;
+                selectedTeam.set(i,new TeamMember(selectname,selectid,selectrole));
                 i+=1;
             }
         });
@@ -65,18 +65,17 @@ function showPage(){
 
 function changeShip(){
     let id = this.id.substring(this.id.length-1);
-    let name = document.querySelector("#name"+id).innerHTML;
-    let speed = document.querySelector("#speed"+id).innerHTML;
-    let capacity = document.querySelector("#capacity"+id).innerHTML;
-    shipCapacity=capacity;
+    let name = document.querySelector("#name" + id).dataset.name;
+    let speed = document.querySelector("#speed" + id).dataset.speed;
+    let capacity = document.querySelector("#capacity" + id).dataset.capacity;
+    shipCapacity = capacity;
     document.querySelectorAll(".ship").forEach(
             function(e){
-                e.querySelector("#rocket-icon").src="images/ship"+id+".svg";
+                e.querySelector("#rocket-icon").src = "images/ship" + id + ".svg";
                 e.querySelector("#rocket-name").innerHTML = name;
                 e.querySelector("#rocket-speed").innerHTML = speed;
                 e.querySelector("#rocket-capacity").innerHTML = capacity;
             });
-	document.querySelector("#mainRocket").className="bigRocket ship"+id;
     crewButton();
 }
 
@@ -93,18 +92,18 @@ function changeCrew(){
     let role=this.name;
     if (this.checked) {
         document.querySelector("#"+role+icon).style.display="inline-block";
-        crewAmount+=1;
+        crewQuantity+=1;
     }
     else{
         document.querySelector("#"+role+icon).style.display="none";
-        crewAmount-=1;
+        crewQuantity-=1;
     }
     crewButton();
 }
 
 function crewButton(){
     let crewButton=document.querySelector("#crewButton");
-    if (crewAmount==shipCapacity) {
+    if (crewQuantity===shipCapacity) {
         crewButton.disabled=false;
         crewButton.className="activeButton";
     }
@@ -121,16 +120,12 @@ class Rocket{
         this.teamNumber = capacity;
         this.icon = icon;
     }
-
-    launch () {
-        
-    }
 }
 
 class TeamMember{
     constructor(name, icon, role){
-        this.name=name;
-        this.icon=icon;
-        this.role=role;
+        this.name = name;
+        this.icon = icon;
+        this.role = role;
     }
 }
