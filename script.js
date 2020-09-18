@@ -54,13 +54,13 @@ function showPage(){
     document.querySelector(".clicked").classList.remove("clicked");  
     this.classList.add("clicked");
                     
-    let index = Array.prototype.indexOf.call(navMenu, this);
+    let currentIndex = Array.prototype.indexOf.call(navMenu, this);
     mainPage.forEach(
-        function(e){
+        function(e, index){
             e.style.display = "none";
+            if(index == currentIndex) mainPage[index].style.display = "block";
         }
     );
-    mainPage[index].style.display = "block";
 }
 
 function changeShip(){

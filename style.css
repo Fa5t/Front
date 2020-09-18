@@ -111,12 +111,18 @@ nav{
 	padding:4% 4% 2% 4%;
 }
 
-.weather-list,
-.crew-list,
 .ship-list,
-.main-block-list,
 .main-block-list-flex{
-	margin: 0% 7% 7% 7%
+	margin: 0% 7% 7% 7%;
+}
+
+.main-block-list{
+	margin: 0% 3% 3% 3%;
+}
+
+.weather-list,
+.crew-list{
+	margin: 0% 4.5% 4.5% 4.5%;
 }
 
 .main-block-list-flex{
@@ -144,6 +150,15 @@ nav{
 	width: 100%;
 	margin:0;
 	padding:0;	
+}
+
+.crew-list-spisok-selectable li{
+	list-style: none;
+	margin:0;
+	padding:0;
+	margin-top: 2.5%;
+	padding-bottom: 5.1%;
+	border-bottom: 1px solid rgb(114, 112, 112);
 }
 
 .status-header,
@@ -309,6 +324,14 @@ li{
 	font-weight: bold;
 }
 
+.leftText-ship .ship-list-spisok li{
+	margin-top: 8%;
+}
+
+.rightText-ship .ship-list-spisok li{
+	margin-top: 4%;
+}
+
 .rightText-ship{
 	float:right;
 	width:44%;
@@ -349,14 +372,25 @@ li{
 	margin-top:4%;
 }
 
-.weather-list-spisok li,
-.crew-list-spisok li{
-	padding-top: 4%;
+.weather-list-spisok li:not(:last-child),
+.crew-list-spisok li:not(:last-child){
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	margin-top: 2.5%;
+	padding-bottom: 4%;
+	border-bottom: 1px solid #D8DCE3;
+}
+
+.margin-w1{
+	margin-top: 3%;
+	margin-bottom: 2%;
 }
 
 .margin-w{
+	margin-top: 3%;
+	padding-bottom: 3%;
 	width:100%;
-	border-bottom: 1px solid #D8DCE3;
 }
 
 .margin-s{
@@ -380,7 +414,7 @@ li{
 .all-ship-hidden{
 	display: flex;
 	flex-wrap: wrap;
-	margin-left: 10%;
+	margin-left: 8.2%;
 }
 
 .teamimage{
@@ -464,11 +498,58 @@ input[type=checkbox] {
 	width:40%;
 }
 
-.crewdetails{
-	margin: 0;
-	margin-left: 100%;
-	margin-top: 2%;
-	padding: 0;
+.container{
+	display: block;
+	position: relative;
+	cursor: pointer;
+	font-size: 20px;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+  
+.container input{
+	position: absolute;
+	opacity: 0;
+	cursor: pointer;
+	height: 0;
+	width: 0;
+}
+  
+.checkmark{
+	position: absolute;
+	top: 0;
+	left: 77%;
+	height: 20px;
+	width: 20px;
+	background-color: #FFFFFF;
+	border: 1.5px solid black;
+}
+  
+.container input:checked ~ .checkmark{
+	background-color: #FFFFFF;
+}
+  
+.checkmark:after{
+	content: "";
+	position: absolute;
+	display: none;
+}
+  
+.container input:checked ~ .checkmark:after{
+	display: block;
+}
+  
+.container .checkmark:after{
+	width:8px;
+	height:12px;
+	margin-left:5px;
+	border: solid #73E24D;
+	border-width: 0 3px 3px 0;
+	-webkit-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	transform: rotate(45deg);
 }
 
 .captain1{
