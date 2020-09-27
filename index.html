@@ -24,41 +24,43 @@
             <div class ="main">
 
                 <div class="astronomy"></div>
-                <div id = "mainRocket" class="bigRocket ship1"></div>
+                <div id = "mainRocket" class="mainRocket-change"></div>
                 <br><br>
-                <div class="status selected">
+                <div class="status selected underline">
                     <div class="status-header">
                     <b>Статус</b>
-                    <button class="inactiveButton">Поехали!</button>
+                    <button class="inactiveButton" id="FlyToTheMoon" onclick="rocket.launch()">Поехали!</button>
                     </div>
                     <ul class="status-list">
-                        <li>Ракета выбрана</li>
-                        <li>Команда собрана</li>
-                        <li>Погода - ок</li>
+                        <ul class="stats" id="statsRocket">
+                            <li >Ракета выбрана</li>
+                        </ul>
+                        <ul class="stats" id="statsCrew">
+                            <li>Команда собрана </li>
+                        </ul>
+                        <ul class="stats" id="statsWeather">
+                            <li>Погода - ок </li>
+                        </ul>
                     </ul>
                 </div>
 
-                <div class="weather select">
+                <div class="weather select underline">
                     <div class="weather-header">
                         <b>Погодные условия</b>
                     </div>
                     <div class="weather-list">
-                            <ul class = "weather-list-spisok">
-                                <li><span class="leftText-l">Локация</span><span class="rightText">Космодром Северный</span></li>
-                                <li><span class="leftText-l">Температура</span><span class="rightText">+15</span></li>
-                                <li><span class="leftText-l">Влажность</span><span class="rightText">63%</span></li>
-                                <li><span class="leftText-l">Ветер</span><span class="rightText">5 м\с, СЗ</span></li>
+                            <ul class = "weather-list-spisok" id="blockWeather">
                             </ul>
                     </div>
                 </div>
 
-                <div class="crew selected">
+                <div class="crew selected underline">
                     <div class="crew-header">
                         <b>Экипаж</b>
                     </div>
                     <div class="crew-list">
-                            <ul class = "crew-list-spisok">
-                                <li ><span class="leftText captain">Капитан</span><span class="rightText">Константин Константинопольский</span></li>
+                            <ul class = "crew-list-spisok" id="blockCrew">
+                                <li><span class="leftText captain">Капитан</span><span class="rightText">Константин Константинопольский</span></li>
                                 <li><span class="leftText engineer">Борт инженер</span><span class="rightText">Иван Иванов</span></li>
                                 <li><span class="leftText doctor">Врач</span><span class="rightText">Петр Петров</span></li>
                                 <li><span class="leftText spacemarine">Космодесантник</span><span class="rightText">Анастасия Преображенская</span></li>
@@ -70,10 +72,10 @@
 
             <div class="main hidden">
                 <h1 class="main-text">Выбор корабля</h1>
-                <div class="ship selected" style="width:40%">
+                <div class="ship selected" style="width:40%" id="currShip">
                     <div class="ship-header">
                         <b>Ракета</b>
-                        <button class="activeButton button-ship">Собрать ракету</button>
+                        <button id="choose-ship" class="activeButton button-ship">Собрать ракету</button>
                     </div>
                     <div class="ship-list">
                         <img class="shipimg ship1" src ="images/ship3.svg" id="rocket-icon">
@@ -97,7 +99,7 @@
                 <div class="all-ship-hidden">
                     <div class="ship-hidden">
                         <div class="ship-list">
-                            <img class="shipimg ship2" src ="images/ship1.svg">
+                            <img class="shipimg ship2" src ="images/ship1.svg" id="rocket-icon2">
                             <div class = "not-border-s">
                                 <ul class = "ship-list-spisok">
                                     <li><div class="margin-s"><span class="leftText-ship">Имя</span><span id = "name1" class="rightText-ship" data-name="Урског-123">Урског-123</span></div></li>
@@ -113,7 +115,7 @@
 
                     <div class="ship-hidden">
                         <div class="ship-list">
-                            <img class="shipimg ship3" src ="images/ship2.svg">
+                            <img class="shipimg ship3" src ="images/ship2.svg" id="rocket-icon3">
                             <div class = "not-border-s">
                                 <ul class = "ship-list-spisok">
                                     <li><div class="margin-s"><span class="leftText-ship">Имя</span><span id = "name2" class="rightText-ship" data-name="Урског-124">Урског-124</span></div></li>
@@ -129,7 +131,7 @@
 
                     <div class="ship-hidden">
                         <div class="ship-list">
-                            <img class="shipimg ship1" src ="images/ship3.svg">
+                            <img class="shipimg ship1" src ="images/ship3.svg" id="rocket-icon1">
                             <div class = "not-border-s">
                                 <ul class = "ship-list-spisok">
                                     <li><div class="margin-s"><span class="leftText-ship">Имя</span><span id = "name3" class="rightText-ship" data-name="Сокол-345">Сокол-345</span></div></li>
@@ -200,7 +202,7 @@
                             <b>Экипаж</b>
                         </div>
                         <div class="main-block-list">
-                            <img id="rocket-icon" class="shipimg ship1" src ="images/ship3.svg" onclick="">
+                            <img id="rocket-icon-choose" class="shipimg ship1" src ="images/ship3.svg">
                             <div class = "leftText-ship not-border">
                                 <ul class = "ship-list-spisok">
                                     <li>Имя</li>
@@ -210,9 +212,9 @@
                             </div>
                             <div class = "rightText-ship not-border">
                                 <ul class = "ship-list-spisok">
-                                    <li id="rocket-name">Сокол 345</li>
-                                    <li id="rocket-speed">8 км/с</li>
-                                    <li id="rocket-capacity">2</li>
+                                    <li id="rocket-name-choose"></li>
+                                    <li id="rocket-speed-choose"></li>
+                                    <li id="rocket-capacity-choose"></li>
                                 </ul>
                             </div>
                         </div>
@@ -248,9 +250,20 @@
                 </div>
             </div>
             </div>
-            <div class="main hidden"><h1 class="main-text">Проверка погодных условий</h1></div>
-
-            <script src="http://code.jquery.com/jquery-3.5.1.js"></script>
+            <div class="main hidden">
+                <h1 class="main-text">Проверка погодных условий</h1>
+                <div class="weather select underline">
+                    <div class="weather-header">
+                        <b>Погодные условия</b>
+                        <button class="activeButton" onClick="WeatherCheck(this);">Проверить</button>
+                    </div>
+                    <div class="weather-list">
+                            <ul class = "weather-list-spisok" id="weatherPage">
+                                <li><span class="leftText-l">Локация</span><span class="rightText"><input type="text" id="verificationPlace"></span></li>
+                            </ul>
+                    </div>
+                </div>
+            </div>
             <script src="script.js"></script>
         </main>
     </body>
