@@ -274,18 +274,19 @@ li{
 	border-bottom: 1px solid #D8DCE3;
 }
 
-.stats li{
+.stats{
 	list-style-image: url("images/greenStatus.svg");
 }
 
 .stats,
 .stats-good{
 	padding:0;
+	padding-bottom: 2%;
 	margin: 0;
 	margin-left: 1%;
 }
 
-.stats-good li{
+.stats-good{
 	list-style-image: url("images/redStatus.svg");
 }
 

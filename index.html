@@ -1,8 +1,4 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -29,18 +25,12 @@
                 <div class="status selected underline">
                     <div class="status-header">
                     <b>Статус</b>
-                    <button class="inactiveButton" id="FlyToTheMoon" onclick="rocket.launch()">Поехали!</button>
+                    <button class="inactiveButton" id="FlyToTheMoon">Поехали!</button>
                     </div>
                     <ul class="status-list">
-                        <ul class="stats" id="statsRocket">
-                            <li >Ракета выбрана</li>
-                        </ul>
-                        <ul class="stats" id="statsCrew">
-                            <li>Команда собрана </li>
-                        </ul>
-                        <ul class="stats" id="statsWeather">
-                            <li>Погода - ок </li>
-                        </ul>
+                        <li class="stats" id="statsRocket">Ракета выбрана</li>
+                        <li class="stats" id="statsCrew">Команда собрана </li>
+                        <li class="stats" id="statsWeather">Погода - ок </li>
                     </ul>
                 </div>
 
@@ -155,7 +145,7 @@
                     <div class="main-block">
                         <div class="main-block-header">
                             <b>Экипаж</b>
-                            <button id="crewButton" class="inactiveButton" onclick="CrewUnification()">Готово</button>
+                            <button id="crewButton" class="inactiveButton">Готово</button>
                         </div>
                         <div class="main-block-list-flex">
                             <div class="margin"><span class="leftText-crew captain">Капитан</span><span class="rightText-crew"><div class="teamimage captain1" id="captain1"></div> <div id="captain2" class="teamimage captain2"></div> </span></div>
@@ -255,7 +245,7 @@
                 <div class="weather select underline">
                     <div class="weather-header">
                         <b>Погодные условия</b>
-                        <button class="activeButton" onClick="WeatherCheck(this);">Проверить</button>
+                        <button class="activeButton" id="weatherUpdate">Проверить</button>
                     </div>
                     <div class="weather-list">
                             <ul class = "weather-list-spisok" id="weatherPage">

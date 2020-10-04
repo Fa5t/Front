@@ -42,23 +42,6 @@ document.addEventListener('DOMContentLoaded', function(){
     });
 });
 
-function CrewUnification(){
-    let i=0;
-    selectedTeam = new Map();
-    check.forEach(
-        function(e){
-            if (e.checked) {
-                let selectname = e.id;
-                let selectrole = e.name;
-                let selectid = e.value;
-                selectedTeam.set(i,new TeamMember(selectname,selectid,selectrole));
-                i+=1;
-            }
-        });
-    ChangeStats('Crew');
-    ShowTeam();
-}
-
 function SetRoleNames(){
 	RoleNames=new Map();
 	RoleNames.set('captain','Капитан');
@@ -68,13 +51,17 @@ function SetRoleNames(){
 }
 
 function checkStats(){
+    let bool = false;
 	if (document.querySelectorAll('.stats').length===0) {
 		document.querySelector('#FlyToTheMoon').className='activeButton';
-		document.querySelector('#FlyToTheMoon').disabled=false;
+        document.querySelector('#FlyToTheMoon').disabled=false;
+        bool = true;
 	} else {
 		document.querySelector('#FlyToTheMoon').className='inactiveButton';
-		document.querySelector('#FlyToTheMoon').disabled=true;
-	}
+        document.querySelector('#FlyToTheMoon').disabled=true;
+        bool = false;
+    }
+    return bool;
 }
 
 function ChangeStats(stat){
@@ -138,14 +125,18 @@ function changeCrew(){
 
 function crewButton(){
     let crewButton=document.querySelector("#crewButton");
+    let bool = false;
     if (crewQuantity===shipCapacity) {
         crewButton.disabled=false;
         crewButton.className="activeButton";
+        bool = true;
     }
     else{
         crewButton.disabled=true;
         crewButton.className="inactiveButton";
+        bool = false;
     }
+    return bool;
 }
 
 class Rocket{
@@ -185,20 +176,14 @@ function ShowTeam(){
 
 function WeatherCheck(){
 	let tempweather='';
-	place=document.getElementById('verificationPlace').value.trim();
+	let place=document.getElementById('verificationPlace').value.trim();
 	if (place!=''){
 	let url='https://api.openweathermap.org/data/2.5/weather?q='+place+'&appid=28867f40dd391e7ad8706ada68f1cfae';
-	fetch(url)
-  .then((response) => {
-    return response.json();
-  })
-  .then((data) => {
-	  if(data.cod===404) {tempweather='Населённый пункт не найден';
-		document.getElementById("blockWeather").innerHTML=tempweather;
-		document.getElementById("weatherPage").innerHTML='<li><span class="leftText-l">Локация</span><span class="rightText"><input type="text" id="verificationPlace"></span></li>'+tempweather;
-		document.getElementById("statsWeather").className="stats";
-		checkStats();
-	} else {
+    fetch(url)
+    .then((response) => {
+        return response.json();
+    })
+    .then((data) => {	  
 		temperature=data.main.temp-273.15;
 		if (data.wind.deg > 350 || data.wind.deg <= 10) direction='С';
 		else if (data.wind.deg > 10 && data.wind.deg <= 80) direction='СВ';
@@ -215,7 +200,50 @@ function WeatherCheck(){
 		ChangeStats('Weather');
 		document.getElementById("blockWeather").innerHTML=tempweather;
 		document.getElementById("weatherPage").innerHTML='<li><span class="leftText-l">Локация</span><span class="rightText"><input type="text" id="verificationPlace"></span></li>'+tempweather;
-		}
-  });
-	}
+    })
+
+  .catch(error => {tempweather='Населённый пункт не найден';
+  document.getElementById("blockWeather").innerHTML=tempweather;
+  document.getElementById("weatherPage").innerHTML='<li><span class="leftText-l">Локация</span><span class="rightText"><input type="text" id="verificationPlace"></span></li>'+ '<li>'+tempweather+'</li>';
+  document.getElementById("statsWeather").className="stats";
+  checkStats();})
+  
+    }
 }
+
+function CrewUnification(){
+    let i=0;
+    selectedTeam = new Map();
+    check.forEach(
+        function(e){
+            if (e.checked) {
+                let selectname = e.id;
+                let selectrole = e.name;
+                let selectid = e.value;
+                selectedTeam.set(i,new TeamMember(selectname,selectid,selectrole));
+                i+=1;
+            }
+        });
+    ChangeStats('Crew');
+    ShowTeam();
+}
+
+let weatherUpd = document.querySelector('#weatherUpdate');
+weatherUpd.addEventListener('click', () => {
+    WeatherCheck(this);
+    });
+
+let crewUnic = document.querySelector('#crewButton');
+crewUnic.addEventListener('click', () => {
+    if (crewButton()) {
+        CrewUnification();
+    }
+});
+
+let launchButton = document.querySelector('#FlyToTheMoon');
+launchButton.addEventListener('click', () => {
+    if (checkStats()) {
+        rocket.launch();
+    }
+});
+
